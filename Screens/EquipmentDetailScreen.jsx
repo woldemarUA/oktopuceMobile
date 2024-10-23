@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { View, Text, Image, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView, FlatList } from 'react-native';
 
 import ParametrageCard from '../components/equipment/ParametrageCard';
 import InformationsCard from '../components/equipment/InformationsCard';

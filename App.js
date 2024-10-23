@@ -1,5 +1,6 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { SafeAreaView, StyleSheet, LogBox, StatusBar } from 'react-native';
+
 import { NavigationContainer } from '@react-navigation/native';
 
 import { createStackNavigator } from '@react-navigation/stack';
@@ -14,8 +15,12 @@ import SiteDetailScreen from './Screens/SiteDetailScreen';
 import EquipmentDetailScreen from './Screens/EquipmentDetailScreen';
 import InterventionsListScreen from './Screens/InterventionsListScreen';
 import InterventionsDetailScreen from './Screens/InterventionsDetailScreen';
+import AddEquipmentScreen from './Screens/AddEquipmentScreen';
 
 const Stack = createStackNavigator();
+LogBox.ignoreLogs([
+  'VirtualizedLists should never be nested inside plain ScrollViews',
+]);
 
 export default function App() {
   return (
@@ -23,7 +28,14 @@ export default function App() {
       <AppContextProvider>
         <SafeAreaView style={styles.container}>
           <NavigationContainer>
-            <Stack.Navigator>
+            <StatusBar style='auto' />
+            <Stack.Navigator
+              screenOptions={{
+                headerShown: true,
+                cardStyle: {
+                  flex: 1,
+                },
+              }}>
               <Stack.Screen
                 name='Home'
                 component={HomeScreen}
@@ -62,6 +74,11 @@ export default function App() {
                 name='EquipmentDetail'
                 component={EquipmentDetailScreen}
                 options={{ title: "Details d'Equipment" }}
+              />
+              <Stack.Screen
+                name='AddEquipment'
+                component={AddEquipmentScreen}
+                options={{ title: "Ajoute d'equipment" }}
               />
             </Stack.Navigator>
           </NavigationContainer>

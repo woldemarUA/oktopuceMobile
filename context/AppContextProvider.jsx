@@ -5,12 +5,16 @@ import SitesProvider from './SitesProvider';
 import EquipmentProvider from './EquipmentProvider';
 import InterventionsProvider from './InterventionsProvider';
 
+import FormProvider from './FormProvider';
+
 const AppContextProvider = ({ children }) => {
   return (
     <ClientsProvider>
       <SitesProvider>
         <EquipmentProvider>
-          <InterventionsProvider>{children}</InterventionsProvider>
+          <InterventionsProvider>
+            <FormProvider>{children}</FormProvider>
+          </InterventionsProvider>
         </EquipmentProvider>
       </SitesProvider>
     </ClientsProvider>

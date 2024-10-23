@@ -1,64 +1,82 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Pressable, Platform } from 'react-native';
 import Logo from '../assets/logoOktopuce.svg';
+import AddEquipmentScreen from './AddEquipmentScreen';
+
 const HomeScreen = ({ navigation }) => {
   const [isClientPressed, setIsClientPressed] = useState(false);
   const [isSitePressed, setIsSitePressed] = useState(false);
 
   return (
     <View style={styles.container}>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '10%',
-        }}>
-        <View style={styles.imageContainer}>
-          <Logo style={styles.image} />
-        </View>
-      </View>
-
-      <View style={styles.buttonContainer}>
-        <Pressable
-          onPress={() => navigation.navigate('ClientList')}
-          onPressIn={() => setIsClientPressed(true)}
-          onPressOut={() => setIsClientPressed(false)}
-          style={({ pressed }) => [
-            {
-              backgroundColor: pressed ? '#39FF14' : 'grey',
-            },
-            styles.button,
-          ]}>
-          <Text style={styles.buttonText}>Clients</Text>
-        </Pressable>
-
-        <Pressable
-          onPress={() => navigation.navigate('SiteList')}
-          onPressIn={() => setIsSitePressed(true)}
-          onPressOut={() => setIsSitePressed(false)}
-          style={({ pressed }) => [
-            {
-              backgroundColor: pressed ? '#39FF14' : 'grey',
-            },
-            styles.button,
-          ]}>
-          <Text style={styles.buttonText}>Sites</Text>
-        </Pressable>
-        <Pressable
-          onPress={() => navigation.navigate('InterventionsList')}
-          onPressIn={() => setIsSitePressed(true)}
-          onPressOut={() => setIsSitePressed(false)}
-          style={({ pressed }) => [
-            {
-              backgroundColor: pressed ? '#39FF14' : 'grey',
-            },
-            styles.button,
-          ]}>
-          <Text style={styles.buttonText}>Interventions</Text>
-        </Pressable>
-      </View>
+      <AddEquipmentScreen />
     </View>
+    // <View style={styles.container}>
+
+    //   <View
+    //     style={{
+    //       flexDirection: 'row',
+    //       justifyContent: 'center',
+    //       alignItems: 'center',
+    //       height: '10%',
+    //     }}>
+    //     <View style={styles.imageContainer}>
+    //       <Logo style={styles.image} />
+    //     </View>
+    //   </View>
+
+    //   <View style={styles.buttonContainer}>
+    //     <Pressable
+    //       onPress={() => navigation.navigate('ClientList')}
+    //       onPressIn={() => setIsClientPressed(true)}
+    //       onPressOut={() => setIsClientPressed(false)}
+    //       style={({ pressed }) => [
+    //         {
+    //           backgroundColor: pressed ? '#39FF14' : 'grey',
+    //         },
+    //         styles.button,
+    //       ]}>
+    //       <Text style={styles.buttonText}>Clients</Text>
+    //     </Pressable>
+
+    //     <Pressable
+    //       onPress={() => navigation.navigate('SiteList')}
+    //       onPressIn={() => setIsSitePressed(true)}
+    //       onPressOut={() => setIsSitePressed(false)}
+    //       style={({ pressed }) => [
+    //         {
+    //           backgroundColor: pressed ? '#39FF14' : 'grey',
+    //         },
+    //         styles.button,
+    //       ]}>
+    //       <Text style={styles.buttonText}>Sites</Text>
+    //     </Pressable>
+    //     <Pressable
+    //       onPress={() => navigation.navigate('InterventionsList')}
+    //       onPressIn={() => setIsSitePressed(true)}
+    //       onPressOut={() => setIsSitePressed(false)}
+    //       style={({ pressed }) => [
+    //         {
+    //           backgroundColor: pressed ? '#39FF14' : 'grey',
+    //         },
+    //         styles.button,
+    //       ]}>
+    //       <Text style={styles.buttonText}>Interventions</Text>
+    //     </Pressable>
+    //     <Pressable
+    //       onPress={() => navigation.navigate('AddEquipment')}
+    //       onPressIn={() => setIsSitePressed(true)}
+    //       onPressOut={() => setIsSitePressed(false)}
+    //       style={({ pressed }) => [
+    //         {
+    //           backgroundColor: pressed ? '#39FF14' : 'grey',
+    //         },
+    //         styles.button,
+    //       ]}>
+    //       <Text style={styles.buttonText}>Ajoute Equipment</Text>
+    //     </Pressable>
+    //   </View>
+    // </View>
   );
 };
 
@@ -68,6 +86,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingBottom: 20,
   },
   imageContainer: {
     marginTop: 20,

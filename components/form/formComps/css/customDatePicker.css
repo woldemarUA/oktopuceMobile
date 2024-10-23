@@ -1,0 +1,66 @@
+/* customDatePicker.css */
+
+
+/* Color Theme Swatches in RGBA */
+.Oktopuce-1-rgba { color: rgba(217, 35, 50, 1); } 
+.Oktopuce-2-rgba { color: rgba(3, 166, 74, 1); }
+.Oktopuce-3-rgba { color: rgba(42, 140, 76, 1); }
+.Oktopuce-4-rgba { color: rgba(242, 242, 242, 1); }
+.Oktopuce-5-rgba { color: rgba(13, 13, 13, 1); }
+
+.custom-date-picker  {
+ 
+  border:  0.0625rem solid  rgba(242, 242, 242, 1) ;
+  /* border-color: rgba(242, 242, 242, 1) ; */
+  background-color: #4CAF50; /* Set the desired background color */
+  /* width: 100%;npmx */
+  /*border-width: 0.0625rem;  1px */
+  border-radius: 0.3125rem; /* 5px */
+  /* padding: 0.5rem 0.625rem; 8px vertical, 10px horizonta
+  margin-right: 0.625rem; */
+  padding: 0.4rem 0.5rem;
+  margin-bottom: 0.9375rem; /* 15px */
+  color: rgba(242, 242, 242, 1);
+  font-size: 1rem; /* 16px */
+  height:fit-content;
+ 
+  }
+
+  .react-datepicker {
+   
+    background-color: #4CAF50;
+  }
+
+ 
+  .react-datepicker__header {
+    background-color: rgba(3, 166, 74, 1); /* Change header background color */
+    color: white; /* Change header text color */
+    border-bottom: 1px solid #a5dfa3; /* Change header border color */
+  }
+
+  .react-datepicker__day--selected {
+    background-color: rgba(3, 166, 74, 1); /* Change background color of selected day */
+    color: white; /* Change text color of selected day */
+    font-weight: bold; 
+  }
+
+  .react-datepicker__month, .react-datepicker__week {
+    color: whitesmoke;
+  }
+
+  /* Style for individual days */
+.react-datepicker__day {
+  color: whitesmoke; /* Change the text color of the days */
+
+  background-color: rgba(3, 166, 74, 1); 
+}
+
+.react-datepicker__day:hover {
+  background-color: rgba(3, 166, 74, 1); /* Change background color on hover */
+  color: rgb(24, 22, 22); /* Change text color on hover */
+  
+}
+  .react-datepicker__day--today {
+    font-weight: bold; /* Highlight today's date */
+  }
+  
